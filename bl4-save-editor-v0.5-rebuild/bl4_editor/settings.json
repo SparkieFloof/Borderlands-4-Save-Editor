@@ -1,0 +1,7 @@
+{
+  "log_retention": 10,
+  "require_explicit_save": true,
+  "make_backups": true,
+  "autoload_userid": true,
+  "last_userid": "76561198105651739"
+}
