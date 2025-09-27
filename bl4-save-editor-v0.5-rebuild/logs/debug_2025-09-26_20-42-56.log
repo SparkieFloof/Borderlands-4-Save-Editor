@@ -1,0 +1,9 @@
+2025-09-26 20:42:56,776 - INFO - Debug tab attached to logger
+2025-09-26 20:43:08,669 - INFO - Loaded character data
+2025-09-26 20:43:08,669 - DEBUG - ItemsTab: load_data called
+2025-09-26 20:43:08,671 - INFO - ItemsTab loaded: backpack=42, equipped=0, bank=0, unknown=0
+2025-09-26 20:43:08,671 - INFO - Loaded items data
+2025-09-26 20:43:08,685 - INFO - Loaded progression data
+2025-09-26 20:43:08,723 - INFO - Loaded stats data
+2025-09-26 20:43:08,725 - INFO - Loaded unlockables data
+2025-09-26 20:43:08,934 - INFO - Opened file: C:/Users/Sparkie/Downloads/bl4-save-editor-v0.5-rebuild/1.yaml

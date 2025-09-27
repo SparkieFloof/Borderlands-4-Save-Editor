@@ -18,6 +18,13 @@ class SettingsTab(QtWidgets.QWidget):
         self.backup_chk.stateChanged.connect(self.toggle_backups)
         layout.addWidget(self.backup_chk)
 
+        # Save precedence: tabs vs raw YAML
+        self.save_precedence_chk = QtWidgets.QCheckBox("Prefer tabs over raw YAML when saving")
+        # default: prefer tabs
+        self.save_precedence_chk.setChecked(core_settings.get_setting("prefer_tabs_on_save", True))
+        self.save_precedence_chk.stateChanged.connect(self.toggle_save_precedence)
+        layout.addWidget(self.save_precedence_chk)
+
         # Log retention spinbox
         retention_layout = QtWidgets.QHBoxLayout()
         retention_label = QtWidgets.QLabel("Log retention (minutes):")
@@ -36,6 +43,9 @@ class SettingsTab(QtWidgets.QWidget):
 
     def toggle_backups(self, state):
         core_settings.set_setting("make_backups", bool(state))
+
+    def toggle_save_precedence(self, state):
+        core_settings.set_setting("prefer_tabs_on_save", bool(state))
 
     def change_retention(self, val):
         core_settings.set_setting("log_retention", int(val))

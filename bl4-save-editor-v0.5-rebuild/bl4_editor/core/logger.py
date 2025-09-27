@@ -37,18 +37,38 @@ def set_debug_tab(tab):
 def _push_to_tab(level, msg):
     if _debug_tab:
         try:
-            _debug_tab.append_log(level.lower(), msg)
+            # level: debug/info/warning/error ; msg: may be a tuple (text, category) or str
+            if isinstance(msg, tuple) and len(msg) == 2:
+                text, category = msg
+            else:
+                text, category = msg, None
+            _debug_tab.append_log(level.lower(), text, category=category)
         except Exception:
             pass
-def debug(msg):
-    logger.debug(msg)
-    _push_to_tab("debug", msg)
-def info(msg):
-    logger.info(msg)
-    _push_to_tab("info", msg)
-def warning(msg):
-    logger.warning(msg)
-    _push_to_tab("warning", msg)
-def error(msg):
-    logger.error(msg)
-    _push_to_tab("error", msg)
+def debug(msg, category=None):
+    if category:
+        logger.debug(f"[{category}] {msg}")
+    else:
+        logger.debug(msg)
+    _push_to_tab("debug", (msg, category))
+
+def info(msg, category=None):
+    if category:
+        logger.info(f"[{category}] {msg}")
+    else:
+        logger.info(msg)
+    _push_to_tab("info", (msg, category))
+
+def warning(msg, category=None):
+    if category:
+        logger.warning(f"[{category}] {msg}")
+    else:
+        logger.warning(msg)
+    _push_to_tab("warning", (msg, category))
+
+def error(msg, category=None):
+    if category:
+        logger.error(f"[{category}] {msg}")
+    else:
+        logger.error(msg)
+    _push_to_tab("error", (msg, category))

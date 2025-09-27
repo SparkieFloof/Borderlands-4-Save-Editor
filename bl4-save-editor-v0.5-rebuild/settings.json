@@ -1,6 +1,16 @@
 {
   "backup_on_save": true,
   "log_retention_minutes": 10,
-  "last_userid": "76561198105651739",
-  "yaml_as_source": false
+  "last_userid": "",
+  "yaml_as_source": false,
+  "ui_theme": "Dark",
+  "custom_stylesheet": "",
+  "qss_path": "app_custom.qss",
+  "ui_hover_color": "#3a3a3a",
+  "ui_tab_color": "#2b2b2b",
+  "ui_text_color": "#e6e6e6",
+  "ui_toolbar_color": "#272727",
+  "ui_tab_spacing": 6,
+  "ui_selected_tab_color": "#3d7bd9",
+  "require_explicit_save": true
 }
