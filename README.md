@@ -134,18 +134,6 @@ You can add pytest-compatible unit tests under the `tests/` directory to protect
 
 ---
 
-## Contributing
-
-Contributions are welcome. A few suggestions to get started:
-
-- Fork the repo and open a branch for your change.
-- Keep UI/logic changes small and add tests for parsing or save/load behavior.
-- If you change the public data format or settings keys, include upgrade/migration notes.
-
-Please respect the project's license (see `LICENSE`).
-
----
-
 ## Troubleshooting
 
 - If the app fails to open `.sav` files, ensure a valid `bl4-crypt-cli.exe` is available in the project root or adjust the `CryptWrapper` to point to your installer binary.
